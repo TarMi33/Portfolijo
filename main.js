@@ -1,5 +1,5 @@
 // Import Three.js and GLTFLoader as modules directly from CDN URLs
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
 
 // --- Scene Setup ---
@@ -109,7 +109,7 @@ const loader = new GLTFLoader(); // Use the imported GLTFLoader
 
 // Load Earth Model from the assets folder
 loader.load(
-    './assets/earth-cartoon/source/earth-cartoon.glb', // Corrected Earth model path
+    './earth-cartoon.glb', // Corrected Earth model path
     function (gltf) {
         // Remove placeholder Earth
         scene.remove(earth);
