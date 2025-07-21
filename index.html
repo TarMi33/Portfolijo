@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechatronics Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js and GLTFLoader will be imported directly in main.js -->
+</head>
+<body>
+    <!-- The 3D scene will be rendered here -->
+    <div id="scene-container"></div>
+
+    <!-- UI Overlays for portfolio sections -->
+
+    <!-- Projects Overlay -->
+    <div id="projects-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>My Projects</h2>
+            <p>This is where you'll showcase your mechatronics projects. You can add images, descriptions, and links to detailed project pages.</p>
+            <p>Example: Robotics arm, automated sorting system, custom drone.</p>
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Contact Me Overlay -->
+    <div id="contact-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for collaborations or inquiries!</p>
+            <p>Email: your.email@example.com</p>
+            <p>LinkedIn: <a href="#" target="_blank">Your LinkedIn Profile</a></p>
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- About Me Overlay -->
+    <div id="about-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>About Me</h2>
+            <p>I'm a passionate mechatronics engineer with expertise in robotics, automation, and embedded systems. I love bringing ideas to life through innovative engineering solutions.</p>
+            <p>My skills include CAD design, PCB layout, firmware development, and more.</p>
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Clients Overlay -->
+    <div id="clients-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>Clients & Collaborations</h2>
+            <p>Here you can list past clients, organizations you've collaborated with, or testimonials.</p>
+            <p>Example: XYZ Robotics, ABC Automation Solutions, University Research Lab.</p>
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- main.js is now loaded as a module -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>;

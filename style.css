@@ -1,0 +1,119 @@
+// --- Handle Window Resizing ---
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener('resize', onWindowResize, false);  css:  /* Basic reset and body styling */
+body {
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+    color: #e0e0e0; /* Light text color */
+    background-color: #000; /* Black background for space */
+}
+
+/* Scene container to hold the Three.js canvas */
+#scene-container {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure canvas is behind overlays */
+}
+
+/* Three.js canvas styling */
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure overlay is on top */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* Disable interactions when hidden */
+}
+
+.overlay-content {
+    background-color: #1a1a1a; /* Darker background for content */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3); /* Cyan glow shadow */
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    border: 1px solid #0ff; /* Cyan border */
+    animation: fadeInScale 0.4s ease-out forwards; /* Animation for appearance */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.overlay-content h2 {
+    color: #0ff; /* Cyan heading */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.overlay-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.overlay-content a {
+    color: #0ff; /* Cyan links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.overlay-content a:hover {
+    color: #00ffff; /* Brighter cyan on hover */
+    text-decoration: underline;
+}
+
+.close-btn {
+    background-color: #0ff; /* Cyan button background */
+    color: #1a1a1a; /* Dark text on button */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px; /* Rounded button corners */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4); /* Button shadow */
+}
+
+.close-btn:hover {
+    background-color: #00ffff; /* Brighter cyan on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
