@@ -1,6 +1,6 @@
-// Import Three.js and GLTFLoader as modules directly from CDN URLs
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
+// Import Three.js and GLTFLoader as modules directly from local files
+import * as THREE from './libs/three.module.js';
+import { GLTFLoader } from './libs/examples/jsm/loaders/GLTFLoader.js';
 
 // --- Scene Setup ---
 const scene = new THREE.Scene();
